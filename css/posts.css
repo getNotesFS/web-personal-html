@@ -106,8 +106,7 @@
 }
 
 .g-item-description {
-    width: 100%;
-    text-align: justify;
+    width: 100%; 
     font-weight: 400;
    display: none;
 }
