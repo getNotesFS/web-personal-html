@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="../../css/posts.css">
 
-    
+
 
 
     <script src="https://kit.fontawesome.com/66d7b97049.js" crossorigin="anonymous"></script>
@@ -26,25 +26,25 @@
     <header id="header-container">
         <a href="/" title="Inicio" aria-label="Ir a la página de inicio">
             <picture>
-              <source media="(max-width:799px)" srcset="../../img/logo-80x80.webp">
-              <source media="(min-width:800px)" srcset="../../img/logo-200x47.webp">
-              <img src="../../img/logo-200x47.webp" alt="Logo de la página que redirecciona a la página de inicio.">
+                <source media="(max-width:799px)" srcset="../../img/logo-80x80.webp">
+                <source media="(min-width:800px)" srcset="../../img/logo-200x47.webp">
+                <img src="../../img/logo-200x47.webp" alt="Logo de la página que redirecciona a la página de inicio.">
             </picture>
-          </a>
-          
-          
-          <nav>
-            <a href="/index.html">Inicio</a>             <a href="../../sobre-mi.html">Sobre mí</a>
+        </a>
+
+
+        <nav>
+            <a href="/index.html">Inicio</a> <a href="../../sobre-mi.html">Sobre mí</a>
             <a href="../../hobbies/index.html">Hobbies</a>
-          </nav>
-          
-          
-          <section aria-label="Buscador y botón de contactar">
-            <em class="fa-solid fa-search" id="btn-buscar" aria-label="Botón para abrir buscador"></em> 
+        </nav>
+
+
+        <section aria-label="Buscador y botón de contactar">
+            <em class="fa-solid fa-search" id="btn-buscar" aria-label="Botón para abrir buscador"></em>
             <a href="../../sobre-mi.html#contacto" title="Enviar un correo">
                 <em class="fa-solid fa-paper-plane"></em> <span>Contactar</span>
             </a>
-          </section> 
+        </section>
     </header>
 
     <div id="overlay"></div>
@@ -52,10 +52,11 @@
         <div id="buscador">
             <!-- Campo de Búsqueda -->
             <label for="campo-buscar">Buscar en el sitio:</label>
-            <input type="search" id="campo-buscar" placeholder="Buscar en el sitio..." >
+            <input type="search" id="campo-buscar" placeholder="Buscar en el sitio...">
 
             <!-- Botón para Realizar la Búsqueda -->
-            <button id="boton-buscar" aria-label="Empezar búsqueda"><em class="fa-solid fa-magnifying-glass"></em>Buscar</button>
+            <button id="boton-buscar" aria-label="Empezar búsqueda"><em
+                    class="fa-solid fa-magnifying-glass"></em>Buscar</button>
 
 
         </div>
@@ -71,17 +72,23 @@
         <article class="hobbies-single-article">
             <header class="page-header-single">
                 <nav aria-label="Breadcrumb" class="breadcrumb-general">
-                    <a href="/index.html">Inicio</a>                     <small><em class="fa-solid fa-chevron-right"></em></small>
+                    <a href="/index.html">Inicio</a> <small><em class="fa-solid fa-chevron-right"></em></small>
                     <a href="../hobbies">Hobbies</a>
                     <small><em class="fa-solid fa-chevron-right"></em></small>
                     <span>Videojuegos</span>
                 </nav>
 
                 <div class="page-g-single">
-                    <a href="https://www.youtube.com/watch?v=41QFL4QB3NE" target="_blank">
-                        <figure aria-label="Videojuegos"><img src="../img/video-videogame.jpg" alt="Videojuegos" />
-                        </figure>
-                    </a>
+
+                    <figure aria-label="Videojuegos" >
+                        <a href="https://www.youtube.com/watch?v=41QFL4QB3NE" target="_blank">
+                            <img src="../img/video-videogame.jpg" alt="Videojuegos" />
+                           <figcaption>
+                            Ver trailer Planetside 2
+                           </figcaption>
+                        </a>
+                    </figure>
+
                     <hgroup>
                         <h1>Videojuegos</h1>
                         <p>
@@ -97,8 +104,9 @@
             <section class="main-content">
                 <h2>Galería</h2>
                 <div class="gallery">
-                    <a href="https://www.youtube.com/watch?v=r3Y2QeLYcwI" target="_blank">
-                        <figure>
+
+                    <figure>
+                        <a href="https://www.youtube.com/watch?v=r3Y2QeLYcwI" target="_blank">
                             <img src="../img/apex-legends-video.jpg" alt="Apex Legends" />
                             <figcaption>
                                 Apex Legends
@@ -109,8 +117,10 @@
                                     Electronic Arts.
                                 </p>
                             </figcaption>
-                        </figure>
-                    </a>
+                        </a>
+                     
+                    </figure>
+
                     <figure>
                         <img src="../img/video-game.jpg" alt="Setup - by Unsplash" />
                         <figcaption>
@@ -188,13 +198,13 @@
         </nav>
     </footer>
 
-    
 
 
-    
 
-    
-<script type="module" src="../js/buscador-h.js"> </script>
+
+
+
+    <script type="module" src="../js/buscador-h.js"> </script>
 </body>
 
 </html>
