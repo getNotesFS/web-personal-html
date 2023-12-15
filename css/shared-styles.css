@@ -454,8 +454,9 @@ position: relative;
     background-color: white;
     z-index: 100;
     width: 90%;
-    max-width: var(--max--width); /* Ancho máximo opcional */
-    padding: 20px; /* Añadir espaciado interno según sea necesario */
+    max-width: var(--max--width); 
+    padding: 20px; 
+    border-radius: .3em;
 }
 
 
