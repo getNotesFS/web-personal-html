@@ -141,7 +141,7 @@ class AudioPlayer {
 
 
     updatePlayPauseButton = () => {
-        playPauseBtn.innerHTML = this.isPlaying ? '<i class="fa fa-pause" aria-hidden="true"></i> ' : '<i class="fa fa-play" aria-hidden="true"></i> ';
+        playPauseBtn.innerHTML = this.isPlaying ? '<em class="fa fa-pause" aria-hidden="true"></em> ' : '<em class="fa fa-play" aria-hidden="true"></em> ';
     };
     togglePlayPause() {
         if (this.isPlaying) {

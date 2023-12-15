@@ -22,7 +22,30 @@
 <body>
 
     <!-- Contenedor para el componente del encabezado -->
-    <header id="header-container"></header>
+    <header id="header-container">
+        <a href="/" title="Inicio" aria-label="Ir a la página de inicio">
+            <picture>
+              <source media="(max-width:799px)" srcset="img/logo-80x80.webp">
+              <source media="(min-width:800px)" srcset="img/logo-200x47.webp">
+              <img src="img/logo-200x47.webp" alt="Logo de la página que redirecciona a la página de inicio.">
+            </picture>
+          </a>
+          
+          
+          <nav>
+            <a href="/">Inicio</a>
+            <a href="sobre-mi.html">Sobre mí</a>
+            <a href="/hobbies">Hobbies</a>
+          </nav>
+          
+          
+          <section aria-label="Buscador y botón de contactar">
+            <i class="fa-solid fa-search" id="btn-buscar" aria-label="Botón para abrir buscador"></i> 
+            <a href="sobre-mi.html#contacto" title="Enviar un correo">
+                <i class="fa-solid fa-paper-plane"></i> <span>Contactar</span>
+            </a>
+          </section> 
+    </header>
     <div id="overlay"></div>
     <div id="search_main_container">
         <div id="buscador">
@@ -49,7 +72,7 @@
             <header class="page-header">
                 <nav aria-label="Breadcrumb" class="breadcrumb-general">
                     <a href="/">Inicio</a>
-                    <small><i class="fa-solid fa-chevron-right"></i></small>
+                    <small><em class="fa-solid fa-chevron-right"></em></small>
                     <span>Sobre mí</span>
                 </nav>
                 <div class="page-g">
@@ -128,28 +151,25 @@
 
 
     <!-- En index.html -->
-    <footer id="footer-container"></footer>
+        <footer id="footer-container">
+        <small>© 2023. Todos los derechos reservados.</small>
+        <nav>
+            <a href="https://www.linkedin.com/in/sfmarmol" target="_blank">
+                <i class="fa-brands fa-linkedin" title="Visita mi perfil de Linkedin"></i>
+            </a>
+            <a href="https://github.com/getnotesfs" target="_blank">
+                <i class="fa-brands fa-github" title="Visita mi repositorioen de GitHub"></i>
+            </a>
+            <a href="mailto:contacto@sfmarmol.com" target="_blank">
+                <i class="fa-solid fa-envelope" title="Envíame un correpo por este medio"></i>
+            </a>
+        </nav>
+    </footer>
 
-    <script>
-        // Cargar el componente del footer utilizando fetch y una ruta relativa
-        fetch('components/footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer-container').innerHTML = data;
-            })
-            .catch(error => console.error('Error al cargar el componente del footer:', error));
-    </script>
+    
 
 
-    <script>
-        // Cargar el componente del encabezado usando fetch
-        fetch('components/header.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('header-container').innerHTML = data;
-            })
-            .catch(error => console.error('Error al cargar el componente del encabezado:', error));
-    </script>
+    
 
 
     <script>

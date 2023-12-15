@@ -89,7 +89,7 @@
      cursor: pointer;
  }
 
- button i {
+ button em {
     color: #fff;
      font-size: 20px;
  }
@@ -134,7 +134,7 @@
     transition: all 0.3s ease;
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75); 
 }
-.play-pause-btn  i{
+.play-pause-btn  em{
     font-size: 30px;
     color: #404040;
     transition: all 0.3s ease;

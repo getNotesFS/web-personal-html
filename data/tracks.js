@@ -38,5 +38,6 @@ const tracks = [
   }
 ];
 
+console.log(tracks);
 // Exportar el arreglo de pistas de audio
 export default tracks;

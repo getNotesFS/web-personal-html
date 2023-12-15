@@ -29,14 +29,38 @@
 
 
     <!-- Contenedor para el componente del encabezado -->
-    <header id="header-container"></header>
+    <header id="header-container">
+        <a href="/" title="Inicio" aria-label="Ir a la página de inicio">
+            <picture>
+              <source media="(max-width:799px)" srcset="img/logo-80x80.webp">
+              <source media="(min-width:800px)" srcset="img/logo-200x47.webp">
+              <img src="img/logo-200x47.webp" alt="Logo de la página que redirecciona a la página de inicio.">
+            </picture>
+          </a>
+          
+          
+          <nav>
+            <a href="/">Inicio</a>
+            <a href="sobre-mi.html">Sobre mí</a>
+            <a href="/hobbies">Hobbies</a>
+          </nav>
+          
+          
+          <section aria-label="Buscador y botón de contactar">
+            <i class="fa-solid fa-search" id="btn-buscar" aria-label="Botón para abrir buscador"></i> 
+            <a href="sobre-mi.html#contacto" title="Enviar un correo">
+                <i class="fa-solid fa-paper-plane"></i> <span>Contactar</span>
+            </a>
+          </section> 
+    </header>
 
     <div id="overlay"></div>
     <div id="search_main_container">
         <div id="buscador">
             <!-- Campo de Búsqueda -->
             <label for="campo-buscar">Buscar en el sitio:</label>
-            <input type="search" id="campo-buscar" placeholder="Buscar en el sitio..." aria-label="Empezar a escribir lo que buscas, ESC para salir o ENTER para buscar">
+            <input type="search" id="campo-buscar" placeholder="Buscar en el sitio..."
+                aria-label="Empezar a escribir lo que buscas, ESC para salir o ENTER para buscar">
 
             <!-- Botón para Realizar la Búsqueda -->
             <button id="boton-buscar" aria-label="Empezar búsqueda"><i
@@ -97,10 +121,9 @@
                 <!-- Botón con enlace a tus playlists -->
                 <a href="/musica.html" class="link-button center medium border-radius" title="Mis Playlists">
                     <img src="./img/music.webp" alt="Sala llena de personas escuchando música en vivo" width="200">
-                    <span>Mis Playlists <i class="fa-solid fa-arrow-right"></i></span>
+                    <span>Mis Playlists <em class="fa-solid fa-arrow-right"></em></span>
 
-                </a>
-
+                </a> 
                 <!-- Reproductor de audio -->
                 <div class="music-player">
                     <div class="audio-player">
@@ -108,19 +131,19 @@
                         <div class="track-info">
                             <div>
                                 <!-- Canción -->
-                                <audio id="audio" src="" aria-label="Reproductor de audio"></audio>
+                                <audio id="audio" src="./data/music-player/sngs/blk182.mp3" aria-label="Reproductor de audio"></audio>
 
                                 <!-- Información de la canción -->
                                 <div class="audio-info">
                                     <!-- Carátula de la canción -->
                                     <div class="audio-image">
-                                        <img id="audioImage" src="" alt="Carátula de la canción actual"
+                                        <img id="audioImage" src="./data/music-player/imgs/blk182.jpeg" alt="Carátula de la canción actual"
                                             role="presentation">
                                     </div>
                                     <!-- Título y autor -->
                                     <div class="main-track-info">
-                                        <h3 class="title" aria-live="polite"></h3>
-                                        <h4 class="author" aria-live="polite"></h4>
+                                        <h3 class="title" aria-live="polite">Adam's Song</h3>
+                                        <h4 class="author" aria-live="polite">Blink-182</h4>
                                     </div>
                                 </div>
                             </div>
@@ -130,26 +153,26 @@
                             <!-- Controles -->
                             <div class="playback-controls">
                                 <button aria-label="Canción anterior" id="previousBtn">
-                                    <i class="fa fa-step-backward" aria-hidden="true"></i>
+                                    <em class="fa fa-step-backward" aria-hidden="true"></em>
                                 </button>
                                 <button id="skipBackwardBtn" class="skipBackward" aria-label="Retroceder 5 segundos">
-                                    <i class="fa fa-backward" aria-hidden="true"></i>
+                                    <em class="fa fa-backward" aria-hidden="true"></em>
                                 </button>
                                 <button class="play-pause-btn" aria-label="Reproducir o pausar" id="playPauseBtn">
-                                    <i class="fa fa-play" aria-hidden="true"></i>
+                                    <em class="fa fa-play" aria-hidden="true"></em>
                                 </button>
                                 <button id="skipForwardBtn" class="skipForward" aria-label="Avanzar 5 segundos">
-                                    <i class="fa fa-forward" aria-hidden="true"></i>
+                                    <em class="fa fa-forward" aria-hidden="true"></em>
                                 </button>
                                 <button aria-label="Canción siguiente" id="nextBtn">
-                                    <i class="fa fa-step-forward" aria-hidden="true"></i>
+                                    <em class="fa fa-step-forward" aria-hidden="true"></em>
                                 </button>
                             </div>
 
                             <!-- Volumen -->
                             <div class="volume-controls">
                                 <button class="volume-btn" aria-label="Silenciar o activar sonido" id="muteVolumeBtn">
-                                    <i class="fa fa-volume-up" aria-hidden="true"></i>
+                                    <em class="fa fa-volume-up" aria-hidden="true"></em>
                                 </button>
                                 <label for="volumeSlider" class="sr-only">Volumen de la canción</label>
                                 <input id="volumeSlider" type="range" class="volume-slider" name="volumen"
@@ -189,13 +212,13 @@
                 <article>
                     <a href="hobbies/trekking.html">
                         <img width="300" src="img/trekkin-2.jpg" alt="Amanecer en la montaña El Altar">
-                        <h3>Senderismo <i class="fa-solid fa-arrow-right"></i></h3>
+                        <h3>Senderismo <em class="fa-solid fa-arrow-right"></em></h3>
                     </a>
                 </article>
                 <article>
                     <a href="../hobbies/video-games.html">
                         <img width="300" src="./img/video-game.jpg" alt="Setup de PC Gamer">
-                        <h3>Videojuegos <i class="fa-solid fa-arrow-right"></i></h3>
+                        <h3>Videojuegos <em class="fa-solid fa-arrow-right"></em></h3>
 
                     </a>
                 </article>
@@ -203,7 +226,7 @@
                 <article class='external-arrow'>
                     <a href="/hobbies" class="link-button center medium border-radius">
                         <img width="300" height="200" src="img/hobbies.jpg" alt="Setup de PC Gamer">
-                        <h3>Ver todos los hobbies <i class="fa-solid fa-arrow-right"></i></h3>
+                        <h3>Ver todos los hobbies <em class="fa-solid fa-arrow-right"></em></h3>
 
                     </a>
                 </article>
@@ -234,7 +257,7 @@
                     <p>
                         <a href="https://www.filmaffinity.com/es/film931317.html" target="_blank"
                             rel="noopener noreferrer" aria-label="Ver trailer de Memento en YouTube">
-                            Ver Trailer <i class="fa-brands fa-youtube"></i>
+                            Ver Trailer <em class="fa-brands fa-youtube"></em>
                         </a>
 
                     </p>
@@ -244,7 +267,7 @@
             <a href="peliculas.html" class="link-button center medium border-radius"
                 aria-label="Descubre más películas recomendadas">
                 <img src="img/movies.jpg" alt="Setup de PC Gamer" width="1300" height="200">
-                <h3> Descubrir más películas <i class="fa-solid fa-arrow-right"></i></h3>
+                <h3> Descubrir más películas <em class="fa-solid fa-arrow-right"></em></h3>
 
             </a>
 
@@ -255,28 +278,25 @@
 
 
     <!-- En index.html -->
-    <footer id="footer-container"></footer>
+    <footer id="footer-container">
+        <small>© 2023. Todos los derechos reservados.</small>
+        <nav>
+            <a href="https://www.linkedin.com/in/sfmarmol" target="_blank">
+                <i class="fa-brands fa-linkedin" title="Visita mi perfil de Linkedin"></i>
+            </a>
+            <a href="https://github.com/getnotesfs" target="_blank">
+                <i class="fa-brands fa-github" title="Visita mi repositorioen de GitHub"></i>
+            </a>
+            <a href="mailto:contacto@sfmarmol.com" target="_blank">
+                <i class="fa-solid fa-envelope" title="Envíame un correpo por este medio"></i>
+            </a>
+        </nav>
+    </footer>
 
-    <script>
-        // Cargar el componente del footer utilizando fetch y una ruta relativa
-        fetch('components/footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer-container').innerHTML = data;
-            })
-            .catch(error => console.error('Error al cargar el componente del footer:', error));
-    </script>
 
 
-    <script>
-        // Cargar el componente del encabezado usando fetch
-        fetch('components/header.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('header-container').innerHTML = data;
-            })
-            .catch(error => console.error('Error al cargar el componente del encabezado:', error));
-    </script>
+
+    
 
 
     <script type="module" src="js/audio-player.js">  </script>
