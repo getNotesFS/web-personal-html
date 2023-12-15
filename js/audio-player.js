@@ -83,7 +83,7 @@ class AudioPlayer {
         progressBarRange.value = progress;
         progressBarRange.style.setProperty('--range-progress', `${progress}%`);
 
-        
+
         this.updateCurrentTime();
     }
     updateCurrentTime() {
@@ -246,4 +246,45 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const audioPlayer = new AudioPlayer(audioElement, tracks);
     new Playlist(playlistElement, audioPlayer);
+
+    document.addEventListener('keydown', function (event) {
+        event.preventDefault();
+ 
+        switch (event.key) {
+            case 'P': // Barra espaciadora para reproducir/pausar
+                audioPlayer.togglePlayPause();
+                break;
+            case 'p': // Barra espaciadora para reproducir/pausar
+                audioPlayer.togglePlayPause();
+                break;
+
+            // case 'ArrowUp': // Flecha arriba para subir el volumen
+            //     audioPlayer.setVolume(audioPlayer.audioElement.volume + 0.05);
+            //     break;
+            // case 'ArrowDown': // Flecha abajo para bajar el volumen
+            //     audioPlayer.setVolume(audioPlayer.audioElement.volume - 0.05);
+            //     break;
+ 
+            case 'f': // Tecla F para avanzar 5 segundos
+                audioPlayer.skipForward();
+                break;
+            case 'F': // Tecla F para avanzar 5 segundos
+                audioPlayer.skipForward();
+                break;
+            case 'b': // Tecla B para retroceder 5 segundos
+                audioPlayer.skipBackward();
+                break;
+            case 'B': // Tecla B para retroceder 5 segundos
+                audioPlayer.skipBackward();
+                break;
+                
+            case 'ArrowRight': // Flecha derecha para la siguiente pista
+                audioPlayer.nextTrack();
+                break;
+            case 'ArrowLeft': // Flecha izquierda para la pista anterior
+                audioPlayer.previousTrack();
+                break;
+            // Aquí puedes agregar más casos según sea necesario
+        }
+    });
 });

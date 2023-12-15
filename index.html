@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="css/customize-progress-bar.css">
 
 
-    
+
 
 
     <script src="https://kit.fontawesome.com/66d7b97049.js" crossorigin="anonymous"></script>
@@ -23,25 +23,25 @@
     <!-- ANALYTICS -->
 
     <!-- END ANALYTICS -->
-<!-- Hotjar Tracking Code for Web Personal v2 -->
-<script>
-    (function(h,o,t,j,a,r){
-        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-        h._hjSettings={hjid:3788194,hjsv:6};
-        a=o.getElementsByTagName('head')[0];
-        r=o.createElement('script');r.async=1;
-        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-        a.appendChild(r);
-    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-</script>
+    <!-- Hotjar Tracking Code for Web Personal v2 -->
+    <script>
+        (function (h, o, t, j, a, r) {
+            h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
+            h._hjSettings = { hjid: 3788194, hjsv: 6 };
+            a = o.getElementsByTagName('head')[0];
+            r = o.createElement('script'); r.async = 1;
+            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+    </script>
 
-<script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "k68r3qm72k");
-</script>
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "k68r3qm72k");
+    </script>
 
 </head>
 
@@ -52,26 +52,26 @@
     <header id="header-container">
         <a href="/" title="Inicio" aria-label="Ir a la página de inicio">
             <picture>
-              <source media="(max-width:799px)" srcset="img/logo-80x80.webp">
-              <source media="(min-width:800px)" srcset="img/logo-200x47.webp">
-              <img src="img/logo-200x47.webp" alt="">
-            </picture> 
-          </a>
-          
-          
-          <nav>
+                <source media="(max-width:799px)" srcset="img/logo-80x80.webp">
+                <source media="(min-width:800px)" srcset="img/logo-200x47.webp">
+                <img src="img/logo-200x47.webp" alt="">
+            </picture>
+        </a>
+
+
+        <nav>
             <a href="/index.html">Inicio</a>
             <a href="sobre-mi.html">Sobre mí</a>
             <a href="/hobbies">Hobbies</a>
-          </nav>
-          
-          
-          <section aria-label="Buscador y botón de contactar">
-            <em class="fa-solid fa-search" id="btn-buscar" aria-label="Botón para abrir buscador"></em> 
+        </nav>
+
+
+        <section aria-label="Buscador y botón de contactar">
+            <em class="fa-solid fa-search" id="btn-buscar" aria-label="Botón para abrir buscador"></em>
             <a href="sobre-mi.html#contacto">
                 <em class="fa-solid fa-paper-plane"></em> <span>Contactar</span>
             </a>
-          </section> 
+        </section>
     </header>
 
     <div id="overlay"></div>
@@ -83,12 +83,15 @@
                 aria-label="Empezar a escribir lo que buscas, ESC para salir o ENTER para buscar">
 
             <!-- Botón para Realizar la Búsqueda -->
-            <button id="boton-buscar" aria-label="Empezar búsqueda"><em class="fa-solid fa-magnifying-glass"></em>Buscar</button>
+            <button id="boton-buscar" aria-label="Empezar búsqueda"><em
+                    class="fa-solid fa-magnifying-glass"></em>Buscar</button>
 
 
         </div>
         <!-- Div para Mostrar los Resultados de la Búsqueda -->
         <div id="resultados-busqueda"></div>
+        <strong>Shift + S: para buscar</strong>
+        <strong>ESC: para salir</strong>
     </div>
 
 
@@ -142,7 +145,7 @@
                     <img src="./img/music.webp" alt="Música en vivo" width="200">
                     <span>Mis Playlists <em class="fa-solid fa-arrow-right"></em></span>
 
-                </a> 
+                </a>
                 <!-- Reproductor de audio -->
                 <div class="music-player">
                     <div class="audio-player">
@@ -150,14 +153,15 @@
                         <div class="track-info">
                             <div>
                                 <!-- Canción -->
-                                <audio id="audio" src="./data/music-player/sngs/blk182.mp3" aria-label="Reproductor de audio"></audio>
+                                <audio id="audio" src="./data/music-player/sngs/blk182.mp3"
+                                    aria-label="Reproductor de audio"></audio>
 
                                 <!-- Información de la canción -->
                                 <div class="audio-info">
                                     <!-- Carátula de la canción -->
                                     <div class="audio-image">
-                                        <img id="audioImage" src="./data/music-player/imgs/blk182.jpeg" alt="Carátula de la canción actual"
-                                            role="presentation">
+                                        <img id="audioImage" src="./data/music-player/imgs/blk182.jpeg"
+                                            alt="Carátula de la canción actual" role="presentation">
                                     </div>
                                     <!-- Título y autor -->
                                     <div class="main-track-info">
@@ -218,6 +222,13 @@
 
                         </div>
                     </div>
+                    <ul class="player_key_mode">
+                        <li>P Reproducir/Pausar <i class="fa fa-play"></i>/<i class="fa fa-pause"></i></li>
+                        <li>F Avanzar 5 segundos <i class="fa fa-forward"></i></li>
+                        <li>B Retroceder 5 segundos <i class="fa fa-backward"></i></li>
+                        <li>→ (Flecha Derecha) Siguiente Pista <i class="fa fa-step-forward"></i></li>
+                        <li>← (Flecha Izquierda) Pista Anterior <i class="fa fa-step-backward"></i></li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -236,7 +247,8 @@
                 </article>
                 <article>
                     <a href="/hobbies/videojuegos.html">
-                        <img width="300" src="./img/video-game.jpg" alt="Setup de PC Gamer, imagen de referencia de Unsplash">
+                        <img width="300" src="./img/video-game.jpg"
+                            alt="Setup de PC Gamer, imagen de referencia de Unsplash">
                         <h3>Videojuegos <em class="fa-solid fa-arrow-right"></em></h3>
 
                     </a>
@@ -285,7 +297,8 @@
 
             <a href="peliculas.html" class="link-button center medium border-radius"
                 aria-label="Descubre más películas recomendadas">
-                <img src="img/movies.jpg" alt="Collage de imágenes de películas que recomiendo" width="1300" height="200">
+                <img src="img/movies.jpg" alt="Collage de imágenes de películas que recomiendo" width="1300"
+                    height="200">
                 <h3> Descubrir más películas <em class="fa-solid fa-arrow-right"></em></h3>
 
             </a>
@@ -295,7 +308,7 @@
 
     </main>
 
- 
+
     <footer id="footer-container">
         <small>© 2023. Todos los derechos reservados.</small>
         <nav>
@@ -317,7 +330,7 @@
 
 
 
-    
+
 
 
     <script type="module" src="js/audio-player.js">  </script>
