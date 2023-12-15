@@ -1,0 +1,297 @@
+
+
+        // Importa las pistas de audio desde el archivo 'tracks.js'
+        import tracks from './data/tracks.js';
+        // Declaración de trackIndex en el ámbito global
+        let trackIndex = 0;
+        let renderPlaylist = () => { };
+        let currentTrack = tracks[trackIndex];
+        let audio = document.getElementById('audio');
+        let progressBarRef = document.querySelector('.progress-bar-range');
+        let progressBarRange = document.getElementById('progressBarRange');
+        let currentSpan = document.querySelector('.time.current');
+        let durationSpan = document.querySelector('.time:not(.current)');
+        let playPauseBtn = document.getElementById('playPauseBtn');
+        const playlist = document.getElementById('playlist');
+        let isPlaying = false;
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const trackInfo = document.getElementById('trackInfo');
+            const controls = document.getElementById('controls');
+            const progress = document.getElementById('progress');
+            const playlist = document.getElementById('playlist');
+
+            trackIndex = 0;
+            currentTrack = tracks[trackIndex];
+            let timeProgress = 0;
+            let duration = 0;
+
+            // Function to handle next track
+            const handleNext = () => {
+                if (trackIndex >= tracks.length - 1) {
+                    trackIndex = 0;
+                } else {
+                    trackIndex++;
+                }
+                loadTrack();
+            };
+
+
+            // Carga la pista inicial
+            loadTrack();
+        });
+
+        // Script Barra de progreso
+        document.addEventListener('DOMContentLoaded', function () {
+
+
+
+
+            const handleProgressChange = () => {
+                audio.currentTime = progressBarRange.value;
+                currentSpan.textContent = formatTime(progressBarRange.value);
+            };
+
+            progressBarRange.addEventListener('input', handleProgressChange);
+
+            // Actualiza durationSpan con la duración del audio (puedes necesitar obtener este valor)
+            const audioDuration = 0; // Reemplaza con la duración real del audio
+            durationSpan.textContent = formatTime(audioDuration);
+
+            // Inicializa la barra de progreso y la visualización de tiempo actual
+            progressBarRange.value = 0;
+            currentSpan.textContent = '00:00';
+        });
+
+
+        // Script controles del reproductor
+
+        document.addEventListener('DOMContentLoaded', function () {
+
+            const progressBarRange = document.getElementById('progressBarRange');
+
+            const skipBackwardBtn = document.getElementById('skipBackwardBtn');
+            const skipForwardBtn = document.getElementById('skipForwardBtn');
+            const previousBtn = document.getElementById('previousBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const volumeSlider = document.getElementById('volumeSlider');
+            const muteVolumeBtn = document.getElementById('muteVolumeBtn');
+
+
+            let volume = 60;
+            let muteVolume = false;
+
+            const togglePlayPause = () => {
+                isPlaying = !isPlaying;
+                if (isPlaying) {
+                    audio.play();
+                } else {
+                    audio.pause();
+                }
+                updatePlayPauseButton();
+            };
+
+
+
+            const skipForward = () => {
+                audio.currentTime += 5;
+            };
+
+            const skipBackward = () => {
+                audio.currentTime -= 5;
+            };
+
+
+            const handleVolumeChange = () => {
+                volume = volumeSlider.value;
+                audio.volume = volume / 100;
+                muteVolume = false;
+                audio.muted = muteVolume;
+                updateVolumeIcon();
+            };
+
+            const toggleMuteVolume = () => {
+                muteVolume = !muteVolume;
+                audio.muted = muteVolume;
+                updateVolumeIcon();
+            };
+
+            const updateVolumeIcon = () => {
+                if (muteVolume || volume < 5) {
+                    muteVolumeBtn.textContent = 'Volume Off';
+                } else if (volume < 40) {
+                    muteVolumeBtn.textContent = 'Volume Low';
+                } else {
+                    muteVolumeBtn.textContent = 'Volume High';
+                }
+            };
+
+            // Función para manejar la pista anterior
+            const handlePrevious = () => {
+                if (trackIndex > 0) {
+                    trackIndex--;
+                } else {
+                    // Si estás en la primera pista y presionas "Anterior", puedes optar por volver a la última pista.
+                    trackIndex = tracks.length - 1;
+                }
+                loadTrack();
+            };
+
+            // Función para manejar la siguiente pista
+            const handleNext = () => {
+                if (trackIndex < tracks.length - 1) {
+                    trackIndex++;
+                } else {
+                    // Si estás en la última pista y presionas "Siguiente", puedes optar por volver a la primera pista.
+                    trackIndex = 0;
+                }
+                console.log("trackIndex", trackIndex);
+                loadTrack();
+            };
+
+
+            playPauseBtn.addEventListener('click', togglePlayPause);
+            skipBackwardBtn.addEventListener('click', skipBackward);
+            skipForwardBtn.addEventListener('click', skipForward);
+            previousBtn.addEventListener('click', handlePrevious);
+            nextBtn.addEventListener('click', handleNext);
+            volumeSlider.addEventListener('input', handleVolumeChange);
+            muteVolumeBtn.addEventListener('click', toggleMuteVolume);
+
+            // Initialize with the first track and initial UI state
+            updatePlayPauseButton();
+            updateVolumeIcon();
+            audio.volume = volume / 100;
+        });
+
+
+        // Script de la lista de reproducción
+        document.addEventListener('DOMContentLoaded', function () {
+           
+
+            console.log("Tracks", tracks);
+            trackIndex = 0;
+
+            // Función para renderizar la lista de reproducción
+              renderPlaylist = () => {
+                playlist.innerHTML = ''; // Borra la lista de reproducción
+                tracks.forEach((track, index) => {
+                    const li = document.createElement('li');
+                    li.textContent = `${track.title} - ${track.author}`;
+                    li.classList.add('playlist-item');
+                    if (index === trackIndex) {
+                        li.classList.add('selected');
+                        console.log("Selected", li);
+                    }
+                    li.addEventListener('click', () => {
+                        setTrack(index);
+                        console.log("index", index);
+                    });
+                    playlist.appendChild(li);
+                });
+            };
+
+            // Función para establecer la pista actual
+            // Función para establecer la pista actual
+            const setTrack = (index) => {
+                trackIndex = index;
+                const currentTrack = tracks[trackIndex];
+                audio.src = currentTrack.src; // Actualiza la fuente del elemento de audio
+                audio.load(); // Carga la nueva pista
+                audio.play(); // Inicia la reproducción
+                renderPlaylist();
+            };
+
+            // Renderiza la lista de reproducción inicialmente
+            renderPlaylist();
+        });
+
+        // Script de información del audio
+        document.addEventListener('DOMContentLoaded', function () {
+
+            const titleElement = document.querySelector('.title');
+            const authorElement = document.querySelector('.author');
+            const audioImage = document.querySelector('.audio-image');
+            const progressBarRef = document.getElementById('progressBarRange'); // Agregué progressBarRef
+
+            console.log("Tracks", tracks);
+            currentTrack = tracks[trackIndex]; // Utiliza el arreglo importado 'tracks'
+
+            const onLoadedMetadata = () => {
+                const seconds = audio.duration;
+                progressBarRef.max = seconds;
+                durationSpan.textContent = formatTime(seconds);
+            };
+
+            const onTimeUpdate = () => {
+                const currentTime = audio.currentTime;
+                progressBarRef.value = currentTime;
+                currentSpan.textContent = formatTime(currentTime);
+            };
+
+            // Establece la fuente del elemento de audio y agrega los event listeners
+            audio.src = currentTrack.src;
+            audio.addEventListener('loadedmetadata', onLoadedMetadata);
+            audio.addEventListener('timeupdate', onTimeUpdate);
+
+
+            // Actualiza la interfaz de usuario con la información de la pista
+            titleElement.textContent = currentTrack.title;
+            authorElement.textContent = currentTrack.author;
+
+            // Actualiza la imagen o icono de audio
+            if (currentTrack.thumbnail) {
+                const image = document.createElement('img');
+                image.src = currentTrack.thumbnail;
+                audioImage.appendChild(image);
+            } else {
+                const iconWrapper = document.createElement('div');
+                iconWrapper.classList.add('icon-wrapper');
+                const audioIcon = document.createElement('span');
+                audioIcon.classList.add('audio-icon');
+                audioIcon.textContent = 'Tu icono de audio'; // Reemplaza con tu icono de audio o texto
+                iconWrapper.appendChild(audioIcon);
+                audioImage.appendChild(iconWrapper);
+            }
+        });
+
+        audio.addEventListener('play', () => {
+            isPlaying = true;
+            updatePlayPauseButton();
+        });
+
+        audio.addEventListener('pause', () => {
+            isPlaying = false;
+            updatePlayPauseButton();
+        });
+        const updatePlayPauseButton = () => {
+            playPauseBtn.innerHTML = isPlaying ? 'Pause' : 'Play';
+        };
+        const loadTrack = () => {
+            console.log("loadTrack", trackIndex);
+            currentTrack = tracks[trackIndex];
+            setTrack(trackIndex);
+        };
+
+
+        const setTrack = (index) => {
+            trackIndex = index;
+            currentTrack = tracks[trackIndex];
+            audio.src = currentTrack.src; // Actualiza la fuente del elemento de audio
+            audio.load(); // Carga la nueva pista
+            audio.play(); // Inicia la reproducción
+            renderPlaylist(); // Actualiza la lista de reproducción
+        };
+
+
+
+        const formatTime = (time) => {
+            if (time && !isNaN(time)) {
+                const minutes = Math.floor(time / 60);
+                const formatMinutes = minutes < 10 ? `0${minutes}` : `${minutes}`;
+                const seconds = Math.floor(time % 60);
+                const formatSeconds = seconds < 10 ? `0${seconds}` : `${seconds}`;
+                return `${formatMinutes}:${formatSeconds}`;
+            }
+            return '00:00';
+        };

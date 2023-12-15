@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../../img/Logo-sm-1x1.svg" type="image/svg+xml">
+
+    <title>Fotografía - Sebastian Mármol</title>
+    <link rel="stylesheet" href="../../css/shared-styles.css">
+    <link rel="stylesheet" href="../../css/pages-style.css">
+
+    <link rel="stylesheet" href="../../css/posts.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
+
+    <script src="https://kit.fontawesome.com/66d7b97049.js" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+
+    <!-- Contenedor para el componente del encabezado -->
+    <header id="header-container"></header>
+
+    <main>
+        <div class="search_main_container"></div>
+        <article class="hobbies-single-article">
+            <header class="page-header-single">
+                <nav aria-label="Breadcrumb" class="breadcrumb-general">
+                    <a href="/">Inicio</a>
+                    <small><i class="fa-solid fa-chevron-right"></i></small>
+                    <a href="../hobbies">Hobbies</a>
+                    <small><i class="fa-solid fa-chevron-right"></i></small>
+                    <span>Fotografía</span>
+                </nav>
+                 
+                <div class="page-g-single">
+                    <figure aria-label="Observatorio Calar Alto, España"><img src="../img/astronomy.jpg"
+                            alt="Observatorio Calar Alto, España" /></figure>
+                    <hgroup>
+                        <h1>Fotografía</h1>
+                        <p>
+                            La fotografía es un hobbie que me gusta mucho, aunque no soy un experto en el tema. Me gusta
+                            tomar fotos de paisajes, cielos, y de vez en cuando, de personas. En esta sección voy a
+                            compartir algunas de las fotos que
+                            he tomado en mis viajes y paseos.
+                        </p>
+                    </hgroup>
+                </div>
+            </header>
+            <section class="main-content">
+                <h2>Galería</h2>
+                <div class="gallery">
+                    <figure>
+                        <img width="300" height="400" src="../img/astronomy.jpg" alt="Observatorio Calar Alto en España" />
+                        <figcaption>
+                            Observatorio Calar Alto en España
+                            <p class="g-item-description">Foto de un observatorio astronómico ubicado en Calar Alto, España, con telescopios y cielo estrellado en la noche.</p>
+                        </figcaption>
+                    </figure>
+                    <figure>
+                        <img width="300" height="400" src="../img/trekkin-2.jpg" alt="Montaña El Altar en Ecuador" />
+                        <figcaption>
+                            Montaña El Altar en Ecuador
+                            <p class="g-item-description">Foto de la majestuosa montaña El Altar en Ecuador, rodeada de naturaleza y paisajes impresionantes.</p>
+                        </figcaption>
+                    </figure>
+                    <figure>
+                        <img width="300" height="400" src="../img/astronomy-2.jpg" alt="Vía Láctea desde montaña El Altar en Ecuador" />
+                        <figcaption>
+                            Vía Láctea desde montaña El Altar en Ecuador
+                            <p class="g-item-description">Imagen de la Vía Láctea vista desde la montaña El Altar en Ecuador, con un cielo lleno de estrellas.</p>
+                        </figcaption>
+                    </figure>
+                    <figure>
+                        <img width="300" height="400" src="../img/astronomy-3.jpg" alt="Vía Láctea desde montaña El Altar en Ecuador" />
+                        <figcaption>
+                            Vía Láctea desde montaña El Altar en Ecuador
+                            <p class="g-item-description">Otra vista impresionante de la Vía Láctea desde la montaña El Altar en Ecuador en una noche despejada.</p>
+                        </figcaption>
+                    </figure>
+                    <figure>
+                        <img width="300" height="400" src="../img/photography-2.jpg" alt="Atardecer en Barcelona, España" />
+                        <figcaption>
+                            Atardecer en Barcelona, España
+                            <p class="g-item-description">Espectacular foto de un atardecer sobre la ciudad de Barcelona, España, con colores cálidos en el horizonte.</p>
+                        </figcaption>
+                    </figure>
+                    <figure>
+                        <img width="300" height="400" src="../img/photography-3.jpg" alt="Atardecer en Barcelona, España" />
+                        <figcaption>
+                            Atardecer en Barcelona, España
+                            <p class="g-item-description">Otra hermosa vista del atardecer en Barcelona, España, con el sol descendiendo sobre la ciudad.</p>
+                        </figcaption>
+                    </figure>
+                    <figure>
+                        <img width="300" height="400" src="../img/travel-6.jpg" alt="La Sagrada Familia en España" />
+                        <figcaption>
+                            La Sagrada Familia en España
+                            <p class="g-item-description">Imagen de la famosa iglesia La Sagrada Familia en Barcelona, España, con su arquitectura única.</p>
+                        </figcaption>
+                    </figure>
+                    <figure>
+                        <img width="300" height="400" src="../img/photography-4.jpg" alt="Ave voladora de nombre Curiquingue en Ecuador" />
+                        <figcaption>
+                            Ave voladora de nombre Curiquingue en Ecuador
+                            <p class="g-item-description">Foto de un pájaro volador llamado Curiquingue, una especie de Ecuador, en su hábitat natural.</p>
+                        </figcaption>
+                    </figure>
+                </div>
+                
+            </section>
+
+
+            <nav class="inner-navigation">
+                <a href="../hobbies/videojuegos.html">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Videojuegos
+                </a>
+                <a href="../hobbies/senderismo.html">
+                    Senderismo
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </nav>
+        </article>
+    </main>
+
+
+    <!-- En index.html -->
+    <footer id="footer-container"></footer>
+
+    <script>
+        // Cargar el componente del footer utilizando fetch y una ruta relativa
+        fetch('components/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+            })
+            .catch(error => console.error('Error al cargar el componente del footer:', error));
+    </script>
+
+
+    <script>
+        // Cargar el componente del encabezado usando fetch
+        fetch('components/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+            })
+            .catch(error => console.error('Error al cargar el componente del encabezado:', error));
+    </script>
+
+
+</body>
+
+</html>

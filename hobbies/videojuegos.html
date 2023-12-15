@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../../img/Logo-sm-1x1.svg" type="image/svg+xml">
+
+    <title>Videojuegos - Sebastian Mármol</title>
+    <link rel="stylesheet" href="../../css/shared-styles.css">
+    <link rel="stylesheet" href="../../css/pages-style.css">
+
+    <link rel="stylesheet" href="../../css/posts.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
+
+    <script src="https://kit.fontawesome.com/66d7b97049.js" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+
+    <!-- Contenedor para el componente del encabezado -->
+    <header id="header-container"></header>
+
+
+
+
+    <main>
+        <div class="search_main_container"></div>
+        <article class="hobbies-single-article">
+            <header class="page-header-single">
+                <nav aria-label="Breadcrumb" class="breadcrumb-general">
+                    <a href="/">Inicio</a>
+                    <small><i class="fa-solid fa-chevron-right"></i></small>
+                    <a href="../hobbies">Hobbies</a>
+                    <small><i class="fa-solid fa-chevron-right"></i></small>
+                    <span>Videojuegos</span>
+                </nav>
+
+                <div class="page-g-single">
+                    <a href="https://www.youtube.com/watch?v=41QFL4QB3NE" target="_blank">
+                        <figure aria-label="Videojuegos"><img src="../img/video-videogame.jpg" alt="Videojuegos" />
+                        </figure>
+                    </a>
+                    <hgroup>
+                        <h1>Videojuegos</h1>
+                        <p>
+                            Los videojuegos ofrecen escapadas a mundos imaginarios, con desafíos y roles heroicos.
+                            Proporcionan una experiencia inmersiva a través de gráficos y narrativas envolventes.
+                            Fomentan el pensamiento estratégico y la
+                            interacción en juegos multijugador. Con diversos géneros, conectan y entretienen a personas
+                            globalmente.
+                        </p>
+                    </hgroup>
+                </div>
+            </header>
+            <section class="main-content">
+                <h2>Galería</h2>
+                <div class="gallery">
+                    <a href="https://www.youtube.com/watch?v=r3Y2QeLYcwI" target="_blank">
+                        <figure>
+                            <img src="../img/apex-legends-video.jpg" alt="Apex Legends" />
+                            <figcaption>
+                                Apex Legends
+                                <p class="g-item-description">
+                                    Apex Legends es un videojuego gratuito perteneciente a los géneros battle royale y
+                                    hero
+                                    shooter en primera persona, desarrollado por Respawn Entertainment y publicado por
+                                    Electronic Arts.
+                                </p>
+                            </figcaption>
+                        </figure>
+                    </a>
+                    <figure>
+                        <img src="../img/video-game.jpg" alt="Setup - by Unsplash" />
+                        <figcaption>
+                            Setup - by Unsplash
+                            <p class="g-item-description"></p>
+                        </figcaption>
+                    </figure>
+                    <figure>
+                        <img src="../img/apex-legends.jpeg" alt="Apex Legends" />
+                        <figcaption>
+                            Apex Legends
+                            <p class="g-item-description">
+                                Apex Legends es un videojuego gratuito perteneciente a los géneros battle royale y hero
+                                shooter en primera persona, desarrollado por Respawn Entertainment y publicado por
+                                Electronic Arts.
+                            </p>
+                        </figcaption>
+                    </figure>
+                    <figure>
+                        <img src="../img/planetside-2.webp" alt="PlanetSide 2" />
+                        <figcaption>
+                            PlanetSide 2
+                            <p class="g-item-description">
+                                PlanetSide 2 es un videojuego de disparos en primera persona de mundo abierto que
+                                presenta combates que involucran potencialmente a miles de jugadores en estrecha
+                                proximidad y admite hasta 2,000 jugadores
+                                simultáneos en un solo mapa.
+                            </p>
+                        </figcaption>
+                    </figure>
+                    <figure>
+                        <img src="../img/video-game4.jpg" alt="Call Of Duty: Warzone" />
+                        <figcaption>
+                            Call Of Duty: Warzone
+                            <p class="g-item-description">
+                                Call of Duty: Warzone es un videojuego de disparos en primera persona, perteneciente al
+                                género Battle royale gratuito, lanzado el 10 de marzo de 2020 para PlayStation 4,
+                                PlayStation 5, Xbox One, Xbox Series X|S y
+                                Microsoft Windows.
+                            </p>
+                        </figcaption>
+                    </figure>
+                </div>
+            </section>
+            <nav class="inner-navigation">
+                <a href="../hobbies/senderismo.html">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Senderismo
+                </a>
+                <a href="../hobbies/fotografia.html">
+                    Fotografía
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </nav>
+        </article>
+    </main>
+
+
+    <!-- En index.html -->
+    <footer id="footer-container"></footer>
+
+    <script>
+        // Cargar el componente del footer utilizando fetch y una ruta relativa
+        fetch('components/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+            })
+            .catch(error => console.error('Error al cargar el componente del footer:', error));
+    </script>
+
+
+    <script>
+        // Cargar el componente del encabezado usando fetch
+        fetch('components/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+            })
+            .catch(error => console.error('Error al cargar el componente del encabezado:', error));
+    </script>
+
+</body>
+
+</html>

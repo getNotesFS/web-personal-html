@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../../img/Logo-sm-1x1.svg" type="image/svg+xml">
+
+    <title>Hobbies - Sebastian Mármol</title>
+    <link rel="stylesheet" href="../../css/shared-styles.css">
+    <link rel="stylesheet" href="../../css/pages-style.css">
+    <link rel="stylesheet" href="../../css/hobbies.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
+
+    <script src="https://kit.fontawesome.com/66d7b97049.js" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+
+    <!-- Contenedor para el componente del encabezado -->
+    <header id="header-container"></header>
+
+
+
+
+
+    <main>
+        <div class="search_main_container"></div>
+        <article class="hobbies-article">
+            <header class="page-header">
+                <nav aria-label="Breadcrumb" class="breadcrumb-general">
+                    <a href="/">Inicio</a>
+                    <small><i class="fa-solid fa-chevron-right"></i></small>
+                    <span>Hobbies</span>
+                </nav>
+                <hgroup>
+                    <h1>Mis hobbies</h1>
+                    <p>Te comparto un poco más de mi vida.</p>
+                </hgroup>
+                <div class="page-cover"></div>
+            </header>
+            <section class="hobbies-grid">
+                <h2>Mis Hobbies</h2>
+                <div class="hobbies">
+                    <article class="CardWithArrow">
+                        <a rel="" href="../hobbies/fotografia.html" target="_self">
+                            <img src="../img/photography-2.jpg" alt="Fotografía" />
+                            <h3>
+                                Fotografía
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </h3>
+                        </a>
+                    </article>
+                    <article class="CardWithArrow">
+                        <a rel="" href="../hobbies/senderismo.html" target="_self">
+                            <img src="../img/trekkin-2.jpg" alt="Senderismo" />
+                            <h3>
+                                Senderismo
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </h3>
+                        </a>
+                    </article>
+                    <article class="CardWithArrow">
+                        <a rel="" href="../hobbies/videojuegos.html" target="_self">
+                            <img src="../img/video-game.jpg" alt="Videojuegos" />
+                            <h3>
+                                Videojuegos
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </h3>
+                        </a>
+                    </article>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <!-- En index.html -->
+    <footer id="footer-container"></footer>
+
+    <script>
+        // Cargar el componente del footer utilizando fetch y una ruta relativa
+        fetch('components/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+            })
+            .catch(error => console.error('Error al cargar el componente del footer:', error));
+    </script>
+
+
+    <script>
+        // Cargar el componente del encabezado usando fetch
+        fetch('components/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+            })
+            .catch(error => console.error('Error al cargar el componente del encabezado:', error));
+    </script>
+
+
+</body>
+
+</html>

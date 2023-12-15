@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../img/Logo-sm-1x1.svg" type="image/svg+xml">
+
+    <title>Mis Playlists - Sebastian Mármol</title>
+    <link rel="stylesheet" href="./css/shared-styles.css">
+    <link rel="stylesheet" href="./css/pages-style.css">
+    <link rel="stylesheet" href="./css/music.css">
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
+
+    <script src="https://kit.fontawesome.com/66d7b97049.js" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+
+    <!-- Contenedor para el componente del encabezado -->
+    <header id="header-container"></header>
+
+
+    <main>
+        <article class="music-article"> 
+
+            <header class="page-header">
+                <nav aria-label="Breadcrumb" class="breadcrumb-general">
+                    <a href="/">Inicio</a>
+                    <small><i class="fa-solid fa-chevron-right"></i></small>
+                    <span>musica</span>
+                </nav>
+                <hgroup>
+                    <h1>Música</h1>
+                    <p>Te comparto mis últimos Playlists en Spotify.</p>
+                </hgroup>
+                <div class="page-cover">
+                    <a href="https://open.spotify.com/playlist/1IkEWkIBECMGVX9Qseka9x" target="_blank"
+                        rel="noopener noreferrer" aria-label="Visitar Playlist - Rebel Yell en Spotify">
+                        <img src="./img/music-player/Rock.png" alt="Playlist - Rebel Yell">
+                    </a>
+                </div>
+            </header>
+
+
+            <section class="playlists-grid">
+                <h2>Playlists</h2>
+                <div class="playlists">
+                    <article class="CardWithArrow">
+                        <a href="https://open.spotify.com/playlist/1IkEWkIBECMGVX9Qseka9x" target="_blank">
+                            <img src="img/music-player/Rock.png" alt="Icono de Playlist - Rebel Yell">
+                            <h3>
+                                <span>Escuchar Playlist -</span>
+                                Rebel Yell
+                                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                            </h3>
+                        </a>
+                    </article>
+
+                    <article class="CardWithArrow">
+                        <a href="https://open.spotify.com/playlist/4U92L85BOQ7b8RcN4gVvKx" target="_blank">
+                            <img src="img/music-player/Rock-2.png" alt="Icono de Playlist - Rock">
+                            <h3>
+                                <span>Escuchar Playlist -</span>
+                                Rock
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </h3>
+                        </a>
+                    </article>
+
+                    <article class="CardWithArrow">
+                        <a href="https://open.spotify.com/playlist/4nbtiQ3c8HegHGJznv7VXl" target="_blank">
+                            <img src="img/music-player/Indie-505.png" alt="Icono de Playlist - Indie 505">
+                            <h3>
+                                <span>Escuchar Playlist -</span>
+                                Indie 505
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </h3>
+                        </a>
+                    </article>
+
+                    <article class="CardWithArrow">
+                        <a href="https://open.spotify.com/playlist/37i9dQZF1DWWQRwui0ExPn" target="_blank">
+                            <img src="img/music-player/Lofi-beats.png" alt="Icono de Playlist - Lofi beats">
+                            <h3>
+                                <span>Escuchar Playlist -</span>
+                                Lofi beats
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </h3>
+                        </a>
+                    </article>
+
+                    <article class="CardWithArrow">
+                        <a href="https://open.spotify.com/playlist/37i9dQZF1DX3oM43CtKnRV" target="_blank">
+                            <img src="img/music-player/00s-Rock-Athems.png" alt="Icono de Playlist - 00s Rock Athems">
+                            <h3>
+                                <span>Escuchar Playlist -</span>
+                                00s Rock Athems
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </h3>
+                        </a>
+                    </article>
+
+                    <article class="CardWithArrow">
+                        <a href="https://open.spotify.com/playlist/37i9dQZF1E37smVryC6Cet?si=9db5ffda56ab4466"
+                            target="_blank">
+                            <img src="img/music-player/Daily-Mix-2.png" alt="Icono de Playlist - Daily Mix 2">
+                            <h3>
+                                <span>Escuchar Playlist -</span>
+                                Daily Mix 2
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </h3>
+                        </a>
+                    </article>
+
+                </div>
+            </section>
+        </article>
+    </main>
+
+
+    <!-- En index.html -->
+    <footer id="footer-container"></footer>
+
+    <script>
+        // Cargar el componente del footer utilizando fetch y una ruta relativa
+        fetch('components/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+            })
+            .catch(error => console.error('Error al cargar el componente del footer:', error));
+    </script>
+
+
+    <script>
+        // Cargar el componente del encabezado usando fetch
+        fetch('components/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+            })
+            .catch(error => console.error('Error al cargar el componente del encabezado:', error));
+    </script>
+
+</body>
+
+</html>

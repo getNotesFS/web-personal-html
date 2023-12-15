@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./img/Logo-sm-1x1.svg" type="image/svg+xml">
+
+    <title>Acerca de mi - Sebastian Mármol</title>
+    <link rel="stylesheet" href="./css/shared-styles.css">
+    <link rel="stylesheet" href="./css/pages-style.css">
+    <link rel="stylesheet" href="./css/about.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
+
+    <script src="https://kit.fontawesome.com/66d7b97049.js" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+
+    <!-- Contenedor para el componente del encabezado -->
+    <header id="header-container"></header>
+
+
+    <main>
+
+
+        <article class="about-me">
+            <header class="page-header">
+                <nav aria-label="Breadcrumb" class="breadcrumb-general">
+                    <a href="/">Inicio</a>
+                    <small><i class="fa-solid fa-chevron-right"></i></small>
+                    <span>Sobre mí</span>
+                </nav>
+                <div class="page-g">
+                    <hgroup>
+                        <h1>¡Hola, soy Sebastián Mármol!</h1>
+                        <div>
+                            <p>
+                                He estado trabajando como <strong>desarrollador web freelance</strong> durante los
+                                últimos 2 años. Mi experiencia en la carrera de <strong>Medios Interactivos</strong> ha
+                                enriquecido mi comprensión sobre el
+                                <strong>trabajo colaborativo</strong> y la <strong>vital interdisciplinariedad</strong>
+                                en los proyectos. Me caracterizo por ser una persona<strong>perseverante e
+                                    íntegra</strong>, valores que reflejo en cada
+                                proyecto y en mi interacción con los clientes.
+                            </p>
+                            <p>La <strong>curiosidad</strong> es uno de mis rasgos distintivos, lo que me mantiene en
+                                una constante búsqueda de <strong>aprendizaje y exploración</strong>, especialmente en
+                                el dinámico mundo de Internet.</p>
+                            <p>Recientemente, he iniciado mi camino en el <strong>Máster de Ingeniería Web</strong> en
+                                la<strong>Universidad de Oviedo</strong>, con la expectativa de profundizar mis
+                                conocimientos y habilidades en el campo.</p>
+                        </div>
+                    </hgroup>
+                    <figure aria-label="Sebastián Mármol"><img src="img/Me-2.jpg" alt="Sebastián Mármol"  height="250" width="250"/></figure>
+                </div>
+            </header>
+            <section id="contacto" class="contact-section">
+                <h2>Contáctame</h2>
+                <h3>¿En qué te puedo ayudar?</h3>
+                <nav>
+                    <a href="https://www.linkedin.com/in/sfmarmol" target="_blank">
+                        <i class="fa-brands fa-linkedin" title="Visita mi perfil de Linkedin"></i>
+                    </a>
+                    <a href="https://github.com/getnotesfs" target="_blank">
+                        <i class="fa-brands fa-github" title="Visita mi repositorioen de GitHub"></i>
+                    </a>
+                    <a href="mailto:contacto@sfmarmol.com" target="_blank">
+                        <i class="fa-solid fa-envelope" title="Envíame un correpo por este medio"></i>
+                    </a>
+                </nav>
+                <p><a href="mailto:contacto@sfmarmol.com">contacto@sfmarmol.com</a></p>
+                <div class="form-map">
+                    <div class="formulario">
+                        <form id="miFormulario">
+                            <label>Nombre:<input type="text" name="name" required=""
+                                    aria-label="Ingresar el nombre" /></label><label>E-mail:<input type="email"
+                                    name="email" required="" aria-label="Ingresar Correo" /></label>
+                            <label>
+                                Servicio:
+                                <select name="service" required="">
+                                    <option value="">Seleccione un servicio</option>
+                                    <option value="web_design">Diseño Web</option>
+                                    <option value="web_dev">Desarrollo Web</option>
+                                    <option value="app_dev">Desarrollo de Aplicaciones</option>
+                                    <option value="seo">SEO</option>
+                                    <option value="maintenance">Mantenimiento Web</option>
+                                </select>
+                            </label>
+                            <br />
+                            <label>Asunto:<input type="text" name="subject" required=""
+                                    aria-label="Ingresar Asunto" /></label><label>Mensaje:<textarea name="message"
+                                    rows="5" required=""></textarea></label>
+                            <button type="submit" aria-label="Enviar mensaje">Enviar</button>
+                        </form>
+                    </div>
+                    <a class="map-content"
+                        href="https://www.google.com/maps/place/Oviedo,+Asturias/data=!4m2!3m1!1s0xd368c9a60ac1c67:0x3134440ecc5e6224?sa=X&amp;ved=2ahUKEwiTnOjtn4mDAxUxVaQEHdW-DPYQ8gF6BAgPEAA">
+                        <figure><img src="img/map.png" alt="Ubicación - Oviedo, Asturias"  /></figure>
+                    </a>
+                </div>
+            </section>
+        </article>
+
+    </main>
+
+
+    <!-- En index.html -->
+    <footer id="footer-container"></footer>
+
+    <script>
+        // Cargar el componente del footer utilizando fetch y una ruta relativa
+        fetch('components/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+            })
+            .catch(error => console.error('Error al cargar el componente del footer:', error));
+    </script>
+
+
+    <script>
+        // Cargar el componente del encabezado usando fetch
+        fetch('components/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+            })
+            .catch(error => console.error('Error al cargar el componente del encabezado:', error));
+    </script>
+
+
+    <script>
+        document.getElementById('miFormulario').addEventListener('submit', function (event) {
+            event.preventDefault(); // Esto previene la recarga de la página
+            enviarMensaje();
+        });
+
+        function enviarMensaje() {
+            // Aquí puedes agregar tu lógica para mostrar un mensaje
+            document.querySelector('.notification').textContent = 'Mensaje enviado con éxito!';
+            document.querySelector('.notification').classList.add('show');
+        }
+
+    </script>
+
+</body>
+
+</html>
