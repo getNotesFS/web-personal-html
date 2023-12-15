@@ -398,7 +398,109 @@ position: relative;
   
   }
 
+#buscador{
+    display: flex;
+    width: 100%;
+    gap: .3em;
+}
+#search_main_container input[type="search"] {
+    width: 100%;
+    padding: 1em;  
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1em;
+    font-weight: 600;
+    color: var(--black);
+    background-color: var(--white);
+    transition: all ease-in-out .2s;
+}
+#search_main_container button {
+    background-color: var(--black);
+    color: var(--white);
+    padding: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    max-width: 90px;
+    transition: all ease-in-out .2s;
 
+
+}
+/* #search_main_container i{
+    color: #000000;
+} */
+
+  #search_main_container {
+
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 140px;
+    left: 50%;
+    transform: translate(-52%, -12%);
+    background-color: white;
+    z-index: 100;
+    width: 90%;
+    max-width: var(--max--width); /* Ancho máximo opcional */
+    padding: 20px; /* Añadir espaciado interno según sea necesario */
+}
+
+
+#search_main_container.show{
+    display: flex;
+}
+#resultados-busqueda{
+    padding: 1em;
+    margin-top: 1em;
+    max-height: 60vh;
+    overflow: auto;
+    width: 100%;
+    display: flex; 
+    flex-wrap: wrap;
+    gap: 2em;
+}
+.search-resultados{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 50%;
+    background-color: #fbfbfb;
+    margin-bottom: .5em;
+    border-bottom: 1px solid black;
+    padding: 0.8em;
+    border-radius: .2em;
+    box-shadow: 3px 6px 2px 0 rgba(0, 0, 0, 0.03), 0 1px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px 0 rgba(0, 0, 0, 0.02);
+}
+.search-resultados p{
+    margin-top: .3em;
+    margin-bottom: .3em;
+    font-size: .8em;
+}
+
+
+#overlay{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #000000b3;
+    z-index: 99;
+
+}
+
+#overlay.show{
+    display: block;
+}
 
 /*===========Breakpoints para Tablets y Desktop */
 

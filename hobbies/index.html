@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../../css/pages-style.css">
     <link rel="stylesheet" href="../../css/hobbies.css">
 
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
 
     <script src="https://kit.fontawesome.com/66d7b97049.js" crossorigin="anonymous"></script>
@@ -23,13 +23,27 @@
 
     <!-- Contenedor para el componente del encabezado -->
     <header id="header-container"></header>
+ 
+    <div id="overlay"></div>
+    <div id="search_main_container">
+        <div id="buscador">
+            <!-- Campo de Búsqueda -->
+            <label for="campo-buscar">Buscar en el sitio:</label>
+            <input type="search" id="campo-buscar" placeholder="Buscar en el sitio..." >
+
+            <!-- Botón para Realizar la Búsqueda -->
+            <button id="boton-buscar" aria-label="Empezar búsqueda"><i
+                    class="fa-solid fa-magnifying-glass"></i>Buscar</button>
 
 
-
+        </div>
+        <!-- Div para Mostrar los Resultados de la Búsqueda -->
+        <div id="resultados-busqueda"></div>
+    </div>
 
 
     <main>
-        <div class="search_main_container"></div>
+
         <article class="hobbies-article">
             <header class="page-header">
                 <nav aria-label="Breadcrumb" class="breadcrumb-general">
@@ -78,6 +92,10 @@
         </article>
     </main>
 
+
+
+
+ </script>
     <!-- En index.html -->
     <footer id="footer-container"></footer>
 
@@ -100,8 +118,14 @@
                 document.getElementById('header-container').innerHTML = data;
             })
             .catch(error => console.error('Error al cargar el componente del encabezado:', error));
+
+
+
+
     </script>
 
+
+    <script type="module" src="../js/buscador-h.js"> </script>
 
 </body>
 

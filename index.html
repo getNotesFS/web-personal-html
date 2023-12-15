@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="css/customize-progress-bar.css">
 
 
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
 
     <script src="https://kit.fontawesome.com/66d7b97049.js" crossorigin="anonymous"></script>
@@ -31,7 +31,30 @@
     <!-- Contenedor para el componente del encabezado -->
     <header id="header-container"></header>
 
+    <div id="overlay"></div>
+    <div id="search_main_container">
+        <div id="buscador">
+            <!-- Campo de Búsqueda -->
+            <label for="campo-buscar">Buscar en el sitio:</label>
+            <input type="search" id="campo-buscar" placeholder="Buscar en el sitio..." aria-label="Empezar a escribir lo que buscas, ESC para salir o ENTER para buscar">
+
+            <!-- Botón para Realizar la Búsqueda -->
+            <button id="boton-buscar" aria-label="Empezar búsqueda"><i
+                    class="fa-solid fa-magnifying-glass"></i>Buscar</button>
+
+
+        </div>
+        <!-- Div para Mostrar los Resultados de la Búsqueda -->
+        <div id="resultados-busqueda"></div>
+    </div>
+
+
+
+
+
+
     <main>
+
         <section className='whoAmI'>
 
             <figure>
@@ -86,12 +109,13 @@
                             <div>
                                 <!-- Canción -->
                                 <audio id="audio" src="" aria-label="Reproductor de audio"></audio>
-            
+
                                 <!-- Información de la canción -->
                                 <div class="audio-info">
                                     <!-- Carátula de la canción -->
                                     <div class="audio-image">
-                                        <img id="audioImage" src="" alt="Carátula de la canción actual" role="presentation">
+                                        <img id="audioImage" src="" alt="Carátula de la canción actual"
+                                            role="presentation">
                                     </div>
                                     <!-- Título y autor -->
                                     <div class="main-track-info">
@@ -121,7 +145,7 @@
                                     <i class="fa fa-step-forward" aria-hidden="true"></i>
                                 </button>
                             </div>
-            
+
                             <!-- Volumen -->
                             <div class="volume-controls">
                                 <button class="volume-btn" aria-label="Silenciar o activar sonido" id="muteVolumeBtn">
@@ -138,8 +162,9 @@
                             <div class="progress">
                                 <span class="time current currentTime"></span>
                                 <label for="progressBarRange" class="sr-only">Progreso de la canción</label>
-                                <input type="range" id="progressBarRange" class="progress-bar-range" name="progreso-de-la-cancion"
-                                    aria-label="Barra de progreso de la canción" value="" max="" />
+                                <input type="range" id="progressBarRange" class="progress-bar-range"
+                                    name="progreso-de-la-cancion" aria-label="Barra de progreso de la canción" value=""
+                                    max="" />
                                 <span class="time audioDuration"></span>
                             </div>
                             <!-- PlayList del reproductor -->
@@ -148,7 +173,7 @@
                                     <!-- Elementos de la lista aquí -->
                                 </ul>
                             </div>
-            
+
                         </div>
                     </div>
                 </div>
@@ -207,8 +232,7 @@
                         cámara
                         instantánea y a las notas tatuadas en su cuerpo.</p>
                     <p>
-                        <a 
-                            href="https://www.filmaffinity.com/es/film931317.html" target="_blank"
+                        <a href="https://www.filmaffinity.com/es/film931317.html" target="_blank"
                             rel="noopener noreferrer" aria-label="Ver trailer de Memento en YouTube">
                             Ver Trailer <i class="fa-brands fa-youtube"></i>
                         </a>
@@ -217,12 +241,13 @@
                 </div>
             </article>
 
-            <a href="peliculas.html" class="link-button center medium border-radius" aria-label="Descubre más películas recomendadas">
+            <a href="peliculas.html" class="link-button center medium border-radius"
+                aria-label="Descubre más películas recomendadas">
                 <img src="img/movies.jpg" alt="Setup de PC Gamer" width="1300" height="200">
                 <h3> Descubrir más películas <i class="fa-solid fa-arrow-right"></i></h3>
-               
+
             </a>
-            
+
         </section>
 
 
@@ -254,8 +279,9 @@
     </script>
 
 
-<script type="module" src="js/audio-player.js">  </script>
+    <script type="module" src="js/audio-player.js">  </script>
 
+    <script src="js/buscador.js"></script>
 
 </body>
 
