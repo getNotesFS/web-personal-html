@@ -90,8 +90,6 @@
         </div>
         <!-- Div para Mostrar los Resultados de la Búsqueda -->
         <div id="resultados-busqueda"></div>
-        <strong>Shift + S: para buscar</strong>
-        <strong>ESC: para salir</strong>
     </div>
 
 
@@ -222,13 +220,7 @@
 
                         </div>
                     </div>
-                    <ul class="player_key_mode">
-                        <li>P Reproducir/Pausar <i class="fa fa-play"></i>/<i class="fa fa-pause"></i></li>
-                        <li>F Avanzar 5 segundos <i class="fa fa-forward"></i></li>
-                        <li>B Retroceder 5 segundos <i class="fa fa-backward"></i></li>
-                        <li>→ (Flecha Derecha) Siguiente Pista <i class="fa fa-step-forward"></i></li>
-                        <li>← (Flecha Izquierda) Pista Anterior <i class="fa fa-step-backward"></i></li>
-                    </ul>
+
                 </div>
             </div>
         </section>
@@ -306,7 +298,71 @@
         </section>
 
 
+        <button id="helpBtn" aria-label="Ayuda y Guía de Accesibilidad">
+            <em class="fa fa-question-circle"></em>
+        </button>
+
+        <dialog id="keyGuideDialog">
+
+            <table id="player_key_mode">
+                <tr>
+                    <td>H</td>
+                    <td>Abrir ayuda</td>
+                    <td><em class="fa fa-question-circle"></em></td>
+                </tr>
+                <tr>
+                    <td>C</td>
+                    <td>Para abrir formulario de contacto</td>
+                    <td><em class="fa fa-envelope"></em></td>
+                </tr>
+                <tr>
+                    <td>ESC</td>
+                    <td>Cerrar ventana de ayuda </td>
+                    <td><em class="fa fa-question-circle"></em></td>
+                </tr>
+                <tr>
+                    <td>S</td>
+                    <td>Abrir buscador </td>
+                    <td><em class="fa fa-search"></em></td>
+                </tr>
+                <tr>
+                    <td>ESC</td>
+                    <td>Cerrar ventana de búsqueda</td>
+                    <td><em class="fa fa-search"></em></td>
+                </tr>
+            </table>
+
+            <table id="player_key_mode">
+                <tr>
+                    <td>P</td>
+                    <td>Reproducir/Pausar</td>
+                    <td><em class="fa fa-play"></em>/<em class="fa fa-pause"></em></td>
+                </tr>
+                <tr>
+                    <td>F</td>
+                    <td>+ 5 segundos </td>
+                    <td><em class="fa fa-forward"></em></td>
+                </tr>
+                <tr>
+                    <td>B</td>
+                    <td>- 5 segundos </td>
+                    <td><em class="fa fa-backward"></em></td>
+                </tr>
+                <tr>
+                    <td>→</td>
+                    <td>Siguiente Pista </td>
+                    <td><em class="fa fa-step-forward"></em></td>
+                </tr>
+                <tr>
+                    <td>←</td>
+                    <td>Pista Anterior </td>
+                    <td><em class="fa fa-step-backward"></em></td>
+                </tr>
+            </table>
+            <button id="closeDialogBtn">Cerrar</button>
+        </dialog>
     </main>
+
 
 
     <footer id="footer-container">
@@ -336,6 +392,8 @@
     <script type="module" src="js/audio-player.js">  </script>
 
     <script src="js/buscador.js"></script>
+
+    <script src="js/help.js"></script>
 
 </body>
 

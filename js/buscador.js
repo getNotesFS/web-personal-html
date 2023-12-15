@@ -193,9 +193,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Event listener para simular clic en el botón al presionar "Mayúsculas + S"
         document.addEventListener('keydown', (event) => {
-            if (event.shiftKey && event.key === 'S') {
-                btnBuscar.click();
-                document.getElementById('overlay').classList.add('show');
+            if (event.key === 'S' || event.key === 's') {
+                btnBuscar.click(); // Simula un clic en el botón de búsqueda
+                //document.getElementById('overlay').classList.toggle('show');
+        
+                // Establece un temporizador para enfocar el campo de búsqueda después de un breve retraso
                 setTimeout(() => {
                     campoBuscar.focus();
                 }, 300); // Ajusta el tiempo según sea necesario
