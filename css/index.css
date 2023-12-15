@@ -171,7 +171,7 @@ main>section:first-child p {
     box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.03), 0 1px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px 0 rgba(0, 0, 0, 0.02);
 }
 
-.hobby-grid article:hover {
+.hobby-grid article:hover:not(.external-arrow){
     transition: ease-in-out 0.2s;
     transform: scale(1.01);
     cursor: pointer;
@@ -229,6 +229,8 @@ main>section:first-child p {
     padding: 1.4em 10%;
     gap: 1.4em;
     margin: 0 auto;
+
+    margin-bottom: 5em;
     
 }
 
