@@ -205,10 +205,17 @@ footer>small {
 
 footer>nav a {
     display: inline-flex;
-    align-items: center;
+    color: white;
+    /* display: flex; */
+    align-items: flex-start;
+    gap: 0.3em;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+
 }
 
-footer>nav a i {
+footer>nav a em {
     color: var(--white);
     height: 2em;
     padding: 0.3em;
@@ -216,7 +223,7 @@ footer>nav a i {
     transition: all ease-in-out .2s;
 }
 
-footer>nav a i:hover {
+footer>nav a em:hover {
 
     color: var(--hover-red);
     margin-top: -0.7em;
